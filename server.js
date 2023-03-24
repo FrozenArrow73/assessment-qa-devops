@@ -7,12 +7,28 @@ app.use(express.json())
 
 app.use(express.static(__dirname + "/public"))
 
+// include and initialize the rollbar library with your access token
+var Rollbar = require('rollbar')
+var rollbar = new Rollbar({
+  accessToken: '0f688a3b6d06456ca965288fb1eb2dcd',
+  captureUncaught: true,
+  captureUnhandledRejections: true,
+})
+
+// record a generic message and send it to Rollbar
+rollbar.log('Hello world!')
+
 app.get('/api/robots', (req, res) => {
     try {
         res.status(200).send(botsArr)
+        //-----------------------------------------------------------------<this is the second rollbar
+        rollbar.log("successfully retrived all bots")
     } catch (error) {
         console.log('ERROR GETTING BOTS', error)
+        //-----------------------------------------------------------------<this is the first rollbar
+        rollbar.critical("Not able to retrive all bots")
         res.sendStatus(400)
+        
     }
 })
 
@@ -21,9 +37,13 @@ app.get('/api/robots/five', (req, res) => {
         let shuffled = shuffleArray(bots)
         let choices = shuffled.slice(0, 5)
         let compDuo = shuffled.slice(6, 8)
+        //------------------------------------------------------------------------< this is the forth rollbar
+        rollbar.log("sucessfully retreved 5 bots")
         res.status(200).send({choices, compDuo})
     } catch (error) {
         console.log('ERROR GETTING FIVE BOTS', error)
+        //------------------------------------------------------------------------<this is the third rollbar
+        rollbar.critical("Not able to retreve 5 bots")
         res.sendStatus(400)
     }
 })
