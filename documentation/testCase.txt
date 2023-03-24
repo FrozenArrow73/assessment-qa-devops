@@ -1,0 +1,11 @@
+Test Case 1 (under test plan 1)
+
+Description:
+    Site should display list of bots when "See All Bots" is clicked
+
+Steps:
+    1 - Open Duel Duo site
+    2 - click on "see all bots"
+
+Postconditions:
+    A list of bots should appear

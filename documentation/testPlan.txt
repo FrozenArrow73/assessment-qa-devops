@@ -1,0 +1,24 @@
+Test plan 1
+    Test plan for Duel Duo web app
+
+Overview:
+    Test the functionality of the Duel Duo web app
+
+Test criteria:
+    -I should be able to see a list of bots when I click see all bots
+    -I should be able to select exactly 2 bots to duel
+    -I should be able to duel the computer and be told if I win or losse
+    -after each duel the wins and losses should be updated
+    -wins should reflect the total number that I won
+    -losses should reflect the total number that I lost
+
+Entry criteria:
+    -has access to internet
+    or
+    -has access to Duel Duo files to run on local computer
+
+Exit criteria:
+    -all tests pass
+
+Details:
+    -this assumes that functionality will be the same on deployed side and locally hosted site

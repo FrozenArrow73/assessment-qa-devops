@@ -1,0 +1,21 @@
+Bug report for test case 1
+Date:
+    March 24 2023
+
+Description:
+    nothing changes on the site when "See All Bots" is clicked
+
+Steps to reproduce:
+    1 - host Duel Duo site using node on server.js
+    2 - click on "See All Bots"
+
+
+expected results:
+    A list of all bots should appear
+
+actual results:
+    There is no change to the website
+
+enviroment:
+    12th Gen Intel(R) Core(TM) i7-1260P   2.10 GHz
+    Google Chrome Version 111.0.5563.111 (Official Build) (64-bit)
